@@ -16,8 +16,8 @@ export default function PhotoPage({ params }) {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
-      <img className='w-full max-w-3xl h-auto rounded-md shadow-lg' src={photo.url} alt={photo.caption} />
-      <p className='mt-4 text-xl'>{photo.caption}</p>
+      <img width={400} height={'auto'} className='rounded-md shadow-lg' src={photo.url} alt={photo.caption} />
+      <p className='mt-4 text-xl text-center'>{photo.caption}</p>
     </div>
   );
 }

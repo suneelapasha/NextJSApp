@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./styles/globals.css";
+import Link from 'next/link'
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +11,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <header className="border-gray-300 bg-gradient-to-b from-zinc-200 border-b backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 text-white p-4">
+          <div className="container mx-auto flex justify-between items-center">
+            <h1 className="text-2xl font-semibold font-mono">
+              <Link href="/">Photo Gallery</Link>
+            </h1>
+            <nav>
+              <Link href="/gallery" className="ml-4">Gallery</Link>
+             
+            </nav>
+          </div>
+        </header>
+        <main className="container mx-auto p-4">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }
